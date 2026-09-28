@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rongo University | Hostel Booking</title>
+    <meta
+      name="description"
+      content="Book university accommodation at Rongo University with modern hostels, secure rooms, and fast student reservations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">RU</div>
+          <div>
+            <p class="brand-name">Rongo University</p>
+            <span class="brand-tag">Student Hostels</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#rooms">Hostels</a>
+          <a href="#features">Facilities</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <span class="theme-toggle-icon">☾</span>
+          </button>
+          <button class="nav-button">Book Now</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <span class="eyebrow">Safe, comfortable, and student-focused</span>
+            <h1>Find your ideal hostel at Rongo University.</h1>
+            <p>
+              Secure rooms, high-speed internet, clean living spaces, and support
+              tailored for university life.
+            </p>
+            <div class="hero-actions">
+              <a href="#rooms" class="primary-btn">Browse Hostels</a>
+              <a href="#contact" class="secondary-btn">Talk to Admissions</a>
+            </div>
+            <ul class="hero-points">
+              <li>24/7 security</li>
+              <li>Wi-Fi enabled rooms</li>
+              <li>Modern shared facilities</li>
+            </ul>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-visual">
+              <div class="main-photo">
+                <img
+                  src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
+                  alt="Modern student accommodation"
+                />
+              </div>
+              <div class="thumb-row">
+                <img
+                  src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80"
+                  alt="Hostel bedroom"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80"
+                  alt="Kitchen and shared space"
+                />
+              </div>
+              <div class="floating-badge">
+                <span>Top rated</span>
+                <strong>4.9/5</strong>
+              </div>
+            </div>
+            <div class="mini-card">
+              <span>Available beds</span>
+              <strong>312</strong>
+            </div>
+            <div class="mini-card highlight">
+              <span>Next intake</span>
+              <strong>Sept 2026</strong>
+            </div>
+            <div class="mini-card">
+              <span>Student satisfaction</span>
+              <strong>96%</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="container stats-grid">
+          <div>
+            <strong class="stat-number" data-target="12">0</strong>
+            <span>Residence blocks</span>
+          </div>
+          <div>
+            <strong class="stat-number" data-target="500">0</strong>
+            <span>Comfortable beds</span>
+          </div>
+          <div>
+            <strong class="stat-number" data-target="7">0</strong>
+            <span>Curfew support</span>
+          </div>
+          <div>
+            <strong class="stat-number" data-target="24">0</strong>
+            <span>Security coverage</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="rooms" class="hostels">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Student accommodation</span>
+            <h2>Choose a hostel that fits your lifestyle</h2>
+          </div>
+
+          <div class="filter-bar">
+            <label>
+              <span>Gender</span>
+              <select id="genderFilter">
+                <option value="all">All</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Mixed">Mixed</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Room type</span>
+              <select id="typeFilter">
+                <option value="all">All</option>
+                <option value="Single">Single</option>
+                <option value="Double">Double</option>
+                <option value="Suite">Suite</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Max price</span>
+              <select id="priceFilter">
+                <option value="all">Any</option>
+                <option value="9000">KSh 9,000</option>
+                <option value="12000">KSh 12,000</option>
+                <option value="15000">KSh 15,000</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="hostelGrid" class="hostel-grid"></div>
+        </div>
+      </section>
+
+      <section class="booking-strip">
+        <div class="container booking-layout">
+          <div class="booking-summary">
+            <div class="section-heading left">
+              <span class="eyebrow">Reservation</span>
+              <h2>Book your room in minutes</h2>
+            </div>
+
+            <form id="bookingForm" class="booking-form">
+              <div class="form-row">
+                <label>
+                  <span>Selected hostel</span>
+                  <input id="selectedHostel" type="text" value="Nile Hall" readonly />
+                </label>
+              </div>
+
+              <div class="form-row two-col">
+                <label>
+                  <span>Check-in date</span>
+                  <input id="checkin" type="date" required />
+                </label>
+                <label>
+                  <span>Length of stay</span>
+                  <select id="stayLength">
+                    <option value="1">1 semester</option>
+                    <option value="2">2 semesters</option>
+                    <option value="3">Academic year</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="form-row two-col">
+                <label>
+                  <span>Student name</span>
+                  <input id="studentName" type="text" placeholder="Full name" required />
+                </label>
+                <label>
+                  <span>Admission number</span>
+                  <input id="admission" type="text" placeholder="RU-####" required />
+                </label>
+              </div>
+
+              <button type="submit" class="primary-btn wide-btn">Reserve Room</button>
+            </form>
+          </div>
+
+          <aside class="booking-card">
+            <p class="label">Current booking</p>
+            <h3 id="cardTitle">Nile Hall</h3>
+            <div class="booking-meta">
+              <span id="cardType">Single room</span>
+              <span id="cardPrice">KSh 8,500</span>
+            </div>
+            <ul>
+              <li>Private study desk</li>
+              <li>Shared kitchenette</li>
+              <li>Water and electricity included</li>
+              <li>Fast Wi-Fi connection</li>
+            </ul>
+            <div class="booking-cta">
+              <span>Available</span>
+              <strong id="cardAvailability">12 rooms</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="brochure-strip">
+        <div class="container">
+          <div class="section-heading center">
+            <span class="eyebrow" style="color: #0f172a; background: rgba(245, 185, 66, 0.18); border-color: rgba(15, 23, 42, 0.08);">Campus life</span>
+            <h2>Built for bold academic journeys</h2>
+          </div>
+
+          <div class="brochure-cards">
+            <article class="brochure-card">
+              <h3>Study-first living</h3>
+              <p>Quiet zones, dedicated work desks, and a supportive environment designed for strong academic performance.</p>
+            </article>
+            <article class="brochure-card">
+              <h3>Community wellbeing</h3>
+              <p>Friendly residential life, structured support, and wellness-focused routines that help students feel at home.</p>
+            </article>
+            <article class="brochure-card">
+              <h3>Smart campus access</h3>
+              <p>Well-connected residences close to lecture halls, labs, libraries, and the centre of student life.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="container">
+          <div class="section-heading center">
+            <span class="eyebrow" style="color: var(--primary-dark); background: rgba(13, 148, 136, 0.08); border-color: rgba(13, 148, 136, 0.12);">Why students choose us</span>
+            <h2>Comfort, safety, and convenience</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article>
+              <div class="feature-icon">🛡️</div>
+              <h3>Secure environment</h3>
+              <p>Resident wardens, CCTV coverage, and entry-control systems for peace of mind.</p>
+            </article>
+
+            <article>
+              <div class="feature-icon">📶</div>
+              <h3>High-speed internet</h3>
+              <p>Reliable digital access for online learning, research, and entertainment.</p>
+            </article>
+
+            <article>
+              <div class="feature-icon">🧼</div>
+              <h3>Hygienic spaces</h3>
+              <p>Regular cleaning routines, laundry options, and sanitized shared facilities.</p>
+            </article>
+
+            <article>
+              <div class="feature-icon">🚗</div>
+              <h3>Easy campus access</h3>
+              <p>Short commutes and supportive transport routes to academic blocks.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial-cta">
+        <div class="container testimonial-wrap">
+          <div class="testimonial-content">
+            <span class="eyebrow" style="color: #f7f8ff; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.16);">Student voice</span>
+            <h2>“Living here gave me the stability to focus on my studies and grow as a student leader.”</h2>
+            <p>Our residences support academic excellence, personal development, and a strong sense of belonging throughout the semester.</p>
+            <div class="student-profile">
+              <div class="avatar">AO</div>
+              <div>
+                <strong>Brian mwelesa</strong>
+                <span>Business Management Student</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-panel">
+            <p class="cta-tag">Next intake</p>
+            <h3>Secure your place before spaces fill up.</h3>
+            <p>Early applications receive priority room selection and residence support assistance.</p>
+            <a href="#rooms" class="primary-btn cta-btn">Apply for housing</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Rongo University</h3>
+          <p>Affordable, safe, and student-centered accommodation for campus life.</p>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>+2540111215581</li>
+            <li>hostels@rongouniversity.ac.ke</li>
+            <li>Rongo, Migori County</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Office hours</h4>
+          <ul>
+            <li>Mon - Fri: 8:00 AM - 5:00 PM</li>
+            <li>Sat: 9:00 AM - 1:00 PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
